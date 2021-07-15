@@ -21,7 +21,7 @@
       {{description}}
     </textarea>
   </div>
-
+	{% if not sold %}
   <div class="mb-3">
     <div class="form-check">
       {# TODO  Add sold checkbox here #}
@@ -29,6 +29,7 @@
       <label class="form-check-label" for="sold" > Sold </label>
     </div>
   </div>
+  {% endif %}
 
   <div class="mb-3">
     <button type="submit" class="btn btn-primary">Update</button>
