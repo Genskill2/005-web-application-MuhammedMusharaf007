@@ -80,8 +80,10 @@ def edit(pid):
         # Handle sold
         if sold:
         	sold_1 = datetime.date.today()
-        	cursor.execute("UPDATE pet SET sold = ? WHERE pet.id = ?", [sold_1, pid])
-        	conn.commit()
+        	cursor.execute("UPDATE pet SET sold = ? description = ? WHERE pet.id = ?", [sold_1, description, pid])
+        else:
+        		cursor.execute("UPDATE pet SET description = ? WHERE pet.id = ?", [description, pid])
+        conn.commit()
         return redirect(url_for("pets.pet_info", pid=pid), 302)
         
     
